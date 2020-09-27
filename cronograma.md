@@ -633,8 +633,84 @@ Com isso em mente podemos deduzir que no exemplo anterior, o terceiro parágrafo
 
 Mas se não devemos usar o `!important`, como devemos proceder quando as regras são conflitantes e as regras de prioridade não me ajudam? Para isso podemos usar a regra de especificidade do CSS, ou seja, quanto mais específica for uma regra, mais valor ela terá.
 
+1. Estilo inline: 1000 pontos
+1. Seletor por id: 100 pontos
+1. Seletor por classe ou atributo: 10 pontos
+1. Seletor por tag: 1 ponto
+
+Com essa regra em mente, fica fácil perceber que o seletor `.secao.artigo` tem menos importância que o seletor `#auxiliar`. Da mesma forma, o seletor `#auxiliar.secao.artigo` tem mais prioridade que os dois anteriores. Com isso, podemos aplicar mais regras nos nossos seletores para ficarem mais específicos e, portanto, ganharem prioridade da ordem de precedência do CSS.
+
+## Tema de Casa
+
+Aplicar algum estilo no projeto `curriculo-virtual`. Precisa aplicar pelo menos 1 seletor de cada tipo e aplicar o estilo de forma consistente.
 
 # 01-10 - Aula 08 - Hora de brincar de Lego
+
+Ok! Tudo colorido, tudo com espaçamentos, estilo. Mas como eu posiciono as coisas na tela como eu quiser? Para isso vamos precisar entender duas propriedades muito importantes no CSS: `display` e `position`.
+
+##  Position
+
+Primeiramente... o [link de referência](https://www.w3schools.com/css/css_positioning.asp). Existem 5 formas de posicionar os elementos na página e veremos um pouco de cada uma.
+
+* static - é a básica, como funciona normalmente. Cada elemento funciona como uma caixa que vai encaixando do lado direito do elemento anterior até não caber mais horizontalmente e "cair" para a próxima linha. Alguns elementos, como a `div` ocupam toda extensão horizontal, logo sempre causam essa "quebra de linha".
+* relative - define que o elemento irá ocupar uma posição diferente da normal, mas relativa a ela. Nesse caso, será necessário definir uma ou mais propriedades de referência de posicionamento: `top`, `right`, `bottom` e `left`. O valor será a distância que o elemento ficará de acordo com a propriedade escolhida.
+* fixed - posição relativa ao viewport, ou seja, a porção visível da tela. Também depende das propriedades de referência de posicionamento.
+* absolute - define que o elemento será deslocado como o "relative" porém em relação ao próximo elemento antecessor que possua algum posicionamento, ou seja, o próximo elemento que não seja "static".
+* sticky - elementos com position sticky são posicionados dependendo da posição do scroll da página, alternando entre relative e fixed. Ou seja, funcionarão como relative até que um gatilho seja ativado, esse gatilho é a distância entre o elemento e o viewport e pode ser configurado com as propriedades de referência de posicionamento.
+
+## Display
+
+Aqui complica. O [link de referência](https://www.w3schools.com/css/css_display_visibility.asp) mais uma vez será nosso guia. Existem alguns elementos que são naturalmente "block-level elements", ou seja, ocupam toda extensão horizontal da página, como a `div` e o `p`. Existem também os "inline elements" que ocupam apenas o espaço que o seu conteúdo precisa e vão crescendo conforme o conteúdo cresce, é o caso do `span` e do `a`.
+
+* block - ocupam toda extensão horizontal da página
+* inline - ocupam apenas o espaço que o seu conteúdo precisa - ignora width e height
+* inline-block - ocupam apenas o espaço que o seu conteúdo precisa - considera width e height
+* none - não são exibidos e não ocupam espaço na página
+* flex - funciona como o block, mas nos permite flexibilizar o posicionamento dos elementos filhos
+* grid - funciona como o block, mas nos permite posicionar os elementos filhos como uma grade
+* inline-flex - funciona como o inline, mas nos permite flexibilizar o posicionamento dos elementos filhos
+* inline-grid - funciona como o inline, mas nos permite posicionar os elementos filhos como uma grade
+
+### Flexbox
+
+[Guia completo de flexbox](https://origamid.com/projetos/flexbox-guia-completo/)
+
+#### Flex Container
+
+##### display: flex
+Define o elemento como um flex container, tornando os seus filhos flex-itens.
+
+##### flex-direction
+Define a direção dos flex itens. Por padrão ele é `row` (linha), ou seja, cada elemento filho um ao lado do outro. Utilizamos `column` quando queremos que todos os elementos filhos ocupem toda extensão horizontal, mas queremos controlar a altura que cada um ocupa.
+
+##### flex-wrap
+Define se os itens devem quebrar ou não a linha. Por padrão eles não quebram linha, isso faz com que os flex itens sejam compactados além do limite do conteúdo.
+
+##### justify-content
+Alinha os itens flex no container de acordo com a direção. A propriedade só funciona se os itens atuais não ocuparem todo o container.
+
+##### align-items
+O align-items alinha os flex itens de acordo com o eixo do container (alinhamento vertical com row ou horizontal com column). O alinhamento é diferente para quando os itens estão em colunas ou linhas.
+
+##### align-content
+Alinha as linhas do container em relação ao eixo vertical. A propriedade só funciona se existir mais de uma linha de flex-itens. Para isso o flex-wrap precisa ser wrap.
+
+#### Flex Item
+
+##### flex-grow
+Define a habilidade de um flex item crescer. Por padrão o valor é zero, assim os flex itens ocupam um tamanho máximo relacionado o conteúdo interno deles ou ao width definido.
+
+##### flex-basis
+Indica o tamanho inicial do flex item antes da distribuição do espaço restante.
+
+##### flex-shrink
+Define a capacidade de redução de tamanho do item.
+
+##### flex
+Atalho para as propriedades flex-grow, flex-shrink e flex-basis. Geralmente você verá a propriedade flex nos flex itens ao invés de cada um dos valores separados.
+
+#### order
+Modifica a ordem dos flex itens. Sempre do menor para o maior, assim order: 1, aparece na frente de order: 5.
 
 ## Projeto #02
 
