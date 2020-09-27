@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Meu site de exemplo</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Título do meu Site de Exemplo</h1>
+    </header>
+
+    <main>
+      <section>
+        <header>
+          <h2>Contato</h2>
+        </header>
+
+        <form>
+          <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" />
+            </div>
+            
+            <div>
+              <label for="telefone">Telefone</label>
+              <input id="telefone" type="tel" />
+            </div>
+            
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" />
+            </div>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Habilidades</legend>
+            
+            <div>
+              <label for="ingles">Nível de Inglês</label>
+              <select id="ingles">
+                <option>Básico</option>
+                <option>Intermediário</option>
+                <option>Avançado</option>
+                <option>Fluente</option>
+              </select>
+            </div>
+
+            <div>
+              <p>Tecnologias Conhecidas</p>
+              <label for="html">HTML</label><input name="tecnologias" type="checkbox" id="html" value="html" />
+              <label for="javascript">Javascript</label><input name="tecnologias" type="checkbox" id="javascript" value="javascript" />
+              <label for="css">CSS</label><input name="tecnologias" type="checkbox" id="css" value="css" />
+            </div>
+
+            <div>
+              <p>Principal Característica</p>
+              <label for="comunicacao">Comunicação</label><input name="caracteristica" type="radio" id="comunicacao" value="comunicacao" />
+              <label for="adaptabilidade">Adaptabilidade</label><input name="caracteristica" type="radio" id="adaptabilidade" value="adaptabilidade" />
+              <label for="proatividade">Próatividade</label><input name="caracteristica" type="radio" id="proatividade" value="proatividade" />
+            </div>
+          </fieldset>
+
+          
+          <fieldset>
+            <legend>Currículo</legend>
+            <input type="file" />
+          </fieldset>
+
+          <button>Salvar</button>
+        </form>
+      </section>
+    </main>
+
+  </body>
+</html>
