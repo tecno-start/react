@@ -721,13 +721,461 @@ Modifica a ordem dos flex itens. Sempre do menor para o maior, assim order: 1, a
 **Forma de Entrega**: Branch `projeto-02` no repositório `curriculo-virtual` (exatamente assim)
 
 # 05-10 - Aula 09 - Respira e vamo de novo
+
+Aula de revisão, dúvidas e reforço
+
 # 06-10 - Aula 10 - Luz, camera, ação
+
+## Shut up and show me the code!!
+
+JAVASCRIPT
+
+É uma linguagem de script criada originalmente para ser utilizada junto com HTML e CSS nos navegadores para permitir maior interação entre o site e o usuário, criando mais dinamismo para as páginas. Por um lado, quando utilizamos HTML e CSS nós apenas definimos como os elementos são apresentados em questões semânticas e de estilo, com o javascript podemos adicionar um pouco mais de ação e movimento, afinal, jasvascript é uma linguagem de programação, e como tal, nos permite programar qualquer coisa, criando infinitas possibilidades de interação com o usuário. Podemos, por exemplo, criar popups, efeitos visuais avançados, cálculos, validações, jogos, enfim.
+
+Apesar de ter sido criada inicialmente para ser utilizada apenas no navegador para melhorar a experiência do usuário, atualmente ela também é utilizada em servidores para servir páginas, ou seja, com javascript podemos criar um sistema em um servidor que realiza vários cálculos e devolve uma página com HTML, CSS e javascript para ser renderizado no navegador do usuário. Por isso, dizemos que é uma linguagem de programção client-side e server-side, ou, se preferir, frontend e backend.
+
+> Não confundir com Java, que é uma linguagem de programação backend que não tem nada a ver com javascript e é totalmente diferente.
+
+## Variável
+
+Por ora, variável significa apenas um espaço em memória que guarda alguma informação, para o qual damos um nome para facilitar nosso entendimento e acompanhemento do código, ou seja, damos um nome fácil de lembrar e utilizar para um endereço físico de memória que normalmente seria representado por um endereço hexadecimal de difícil entendimento. Nos próximos capítulos, voltamos nesse assunto com mais detalhes.
+
+## Operadores
+
+### Operador de atribuição
+O operador mais básico e que vamos utilizar na maioria das linguagens de programção, é o operador de **atribuição**. Apesar de ser muito simples, ele pode gerar confusão com os operadores de comparação que veremos no capítulo seguinte. Basicamente, uso o operador `=` para atribuir um valor a uma variável. Então eu estou dizendo com esse operador que determinado endereço de memória, representado por uma variável deverá ser preenchido com determinado valor:
+
+```javascript
+variavel = valor
+```
+
+### Operadores arítméticos
+
+Assim como na matemática, precisamos de [operadores](https://www.w3schools.com/js/js_operators.asp) para realizar diversas operações entre diferentes dados. Os operadores sempre são utilizandos entre os dois operandos (assim como na matemática), com exceção do incremento e decremento.
+
+| Operador | Descrição | Exemplo
+|---|---|---|
+| + | Soma | 2 + 3 = 5 |
+| - | Subtração | 2 - 3 = -1 |
+| * | Multiplicação | 2 * 3 = 6 |
+| ** | Exponenciação | 2 ** 3 = 8 |
+| / | Divisão | 2 / 3 = 0.666666 |
+| % | Módulo (Resto da Divisão) | 2 % 3 = 2 |
+| ++ | Incremento | 2++ = 3 |
+| -- | Decremento | 2-- = 1 |
+
+As regras da aritmética também se aplicam aqui, logo, a ordem de execução dos operadores também. Podemos usar parênteses para dar mais prioridade a uma operação:
+```javascript
+hipotenusa = (catetoAdjacente ** 2 + catetoOposto ** 2) ** (1 / 2)
+```
+
+### Outros operadores de atribuição
+
+Em muitos casos precisamos atribuir um valor a uma variável baseado no valor que ela já tem. Podemos, por exemplo, pegar a variável "idade" (que já possui um valor), adicionar mais 1 e atribuir o resultado de volta à variável "idade":
+
+```javascript
+idade = idade + 1
+```
+
+E isso acontece muitas vezes para muitos operadores diferentes, por isso foram criados operadores de atribuição associados a um operador aritmético que faz exatamente isso:
+
+```javascript
+idade += 1
+```
+
+Nesse exemplo, o resultado é o mesmo e pode ser usado para os outros operadores também, sempre acompanhados do operador de atribuição `=`.
+
+| Operador | Exemplo | Igual a |
+|---|---|---|
+| += |	x += y |	x = x + y |
+| -= |	x -= y |	x = x - y |
+| *= |	x *= y |	x = x * y |
+| /= |	x /= y |	x = x / y |
+| %= |	x %= y |	x = x % y |
+| **= |	x **= y |	x = x ** y |
+
+
+> Os operadores funcionam de forma diferente de acordo com os diferentes tipos de dados, mas pra falar sobre isso precisamos entender um pouco sobre esses tipos.
+
+## Tipos de Dados
+
+Javascript é uma linguagem fracamente tipada. O que isso quer dizer? Isso quer dizer que os dados que são armazenados em memória podem ser separados em [tipo de dados](https://www.w3schools.com/js/js_datatypes.asp), mas esses tipos podem ser alterados a qualquer momento (dinâmicos) da execução do código convertendo de um tipo para outro sem quaisquer validações. Isso fica mais claro quando entendermos quais são os tipos de dados existentes em javascript.
+
+### string
+
+Representa uma sequência de caracteres, ou seja, um texto. Podemos representar um string em javascript utilizando aspas simples ou duplas. Exemplo:
+```javascript
+texto = 'isso é uma string'
+mensagem = "isso também é uma string"
+```
+
+### number
+
+Representa um número, e pode ser tanto um número inteiro quanto um número real. Utilizamos os próprios algarimos sem aspas para representá-los. Exemplo:
+```javascript
+numero = 42
+outroNumero = 15
+```
+
+### boolean
+Representa um valor [booleano](https://www.w3schools.com/js/js_booleans.asp) e por isso só pode assumir dois valores possíveis: falso ou verdadeiro, sendo representado pelo texto em inglês sem aspas. Exemplo:
+```javascript
+gremioCampeao = true
+robsonComeCarne = false
+```
+
+### function
+Representa uma função. Assim como na matemática (`y=f(x)`), uma função possui entradas e saídas (parâmetros e retorno) e executam algum processamento. Para definir uma função precisamos usar uma notação específica informando o nome dela e os parâmetros separados por vírgula:
+```javascript
+function soma(parametroA, parametroB) { 
+  return parametroA + parametroB
+}
+```
+
+E para executar uma função, basta usar o nome dela seguido de parênteses (`()`), onde entre os parênteses são informados os parâmetros para a execução da mesma separados por vírgula:
+```javascript
+resultadoSoma = soma(2, 6)
+```
+
+### object
+Representa um objeto, ou um tipo complexo formado por outros tipos primitivos ou outros objetos, usando a notação de chave e valor para definir o valor de cada propriedade que compreende esse objeto, sempre entre chaves. Podemos entender um objeto como um agrupador de informações, criando uma informação mais complexa. Por exemplo, uma pessoa pode ser identificada pelo seu nome, mas ela possui outras características que podem ser relevantes durante a programação, então agrupamos elas em um objeto que faça sentido no contexto aplicado:
+```javascript
+pessoa = { 
+  nome: 'Robson', 
+  idade: 32, 
+  vivo: true,
+  falar: function (texto) {
+    alert(texto)
+  }
+}
+objetoVazio = { }
+```
+
+Repare que na definição da função de um objeto não é necessário informar o nome da função após o `function`, pois o nome da propriedade já é o suficiente; e para usar a função, usamos o nome da propriedade:
+```javascript
+pessoa.falar('Falando alguma coisa!')
+```
+
+Da mesma forma, podemos acessar os atributos (ou propriedades) dos objetos, usando o nome do objeto seguido do nome da propriedade separados por ponto (`objeto.propriedade`):
+```javascript
+pessoa.nome = pessoa.nome + ' Machado Rosa'
+novaIdade = pessoa.idade + 1
+pessoa.vivo = true
+```
+
+### array
+
+É uma coleção de tipos de dados agrupados em forma de lista ("array") e é representado por colchetes (`[]`). Por ser uma linguagem fracamente tipada, um array pode guardar informações de vários tipos diferentes sendo separados por vírgula:
+```javascript
+array = [
+  'banama',
+  14,
+  'maçã',
+  'carregador',
+  'celular',
+  7,
+  21,
+  true,
+  pessoa
+]
+```
+
+O tamanho, ou comprimento de um array pode ser obtido pela sua propriedade `lenght`, sendo 9 no exemplo anterior. Para acessar um dado do array, podemos fazê-lo através do índice do dado que queremos acessar, sendo esse índice o número da ordem de inserção no array, começando de zero.
+```javascript
+fruta1 = array[0]
+idade1 = array[1]
+fruta2 = array[2]
+item1 = array[3]
+item2 = array[4]
+idade2 = array[5]
+idade3 = array[6]
+condicao = array[7]
+pessoa = array[8]
+quantidadeTotal = array.lenght
+```
+
+Para adicionar itens a um array existente, utilizamos a função `push`:
+```javascript
+array.push(outroDado)
+```
+
+Existem diversas outras funções disponíveis para trabalhar com [arrays](https://www.w3schools.com/js/js_arrays.asp).
+
+### null e undefined e vazio
+
+Existem ainda dois tipos especiais de dados em javascript que são o `undefined` e o `null`. O `null` indica **explicitamente** que uma variável não possui um valor associado a ela. Já o `undefined` indica **implicitamente** que uma variável não possui valor associado a ela. Já um valor vazio é aquele associado a alguns tipos (number, string, array, object) que indicam que possui um valor válido, mas esse valor representa a ausência de dados. Ora, então qual a diferença real entre os três???? Semântica.
+
+![ilustração da diferença entre valor diferente de vazio, valor vazio, nulo e indefinido utilizando 4 imagens de rolo de papel higiênico, onde no primeiro caso temos um suporte com rolo com papel, no segundo caso temos um suporte com um rolo sem papel, no terceiro caso temos o suporte sem rolo algum e no último caso não existe sequer o suporte, é só a parede.](https://i.stack.imgur.com/T9M2J.png)
+
+Programaticamente isso acaba tendo algumas diferenças, pois ora queremos saber se um valor foi informado, se não foi ou ainda se for informado sem dados. Exemplo:
+
+```javascript
+// isso é um comentário
+
+let nomeUsuario 
+// nesse momento, "nomeUsuario" é "undefined" pois nada foi definido pra ela
+
+nomeUsuario = null 
+// usuário não quis responder, logo, é nulo. Nesse caso null e undefined signifacam coisas diferentes.
+// no primeiro caso, eu nem sabia o que o usuário responderia, agora sei que ele preferiu não dar a informação (e isso ainda é uma informação)
+
+nomeUsuario = ''
+// usuário optou por responder, mas preencheu um campo vazio, sem caracteres. Nesse caso, sei que o usuário deu uma resposta
+// é diferente dos casos anteriores que havia ausência de valor. Nesse caso temos o valor vazio representado por uma string vazia: ''
+
+nomeusuario = 'Robson'
+// por último, o usuário escreveu seu nome então temos um caso de "non-zero value", ou seja, não há ausência de valor e o valor não é vazio
+// nesse fluxo, esse é o único exemplo de "non-zero value"
+```
+
+Por que isso é importante? Em muitos casos vamos fazer conversões de tipos automáticas e precisamos entender que `null` e `undefined`, quando convertidos para `boolean` sempre terão o valor `false`, enquanto os outros dois casos serão convertidos para `true`, ou seja, uma string vazia ainda é uma string, mesmo sem dados, ela possui valor.
+
+
+## Tipo dinâmico
+
+Podemos usar operadores com vários tipos de dados diferentes, mas precisamos estar atentos ao resultado de acordo com a combinação de tipos de dados. O que acontece se eu usar o operador `+` entre duas `string`? Simples. Elas serão combinadas (`'isso' + 'isso' + 'isso'= 'issoissoisso'`). Mas, por outro lado... `'isso' - 'isso' = NaN`. Como assim? O que é `NaN`? É uma abreviação para *Not a Number*. O que aconteceu é que no javascript não existe nada definido para uma operação de substração entre duas *string*, sendo assim, automaticamente tentou-se uma conversão para *number*, pois com number podemos fazer subtração. Mas ao tentar converter para *number* não foi possível pois `'issoi'` não é um número. Assim sendo, podemos fazer operações de subtração com *string* desde que o texto da string seja possível converter para *number*:
+```javascript
+'isso' - 'isso' => NaN
+'3' - '2' => 1
+```
+
+Então, uma operação entre duas *string* pode resultar em um *number* por conta do dinamismo com que o javascript opera os diferentes tipos de dados, portanto, tenha muita **ATENÇÃO** com os operadores e operandos. Vejamos outro exemplo:
+
+```javascript
+4 - 4 => 0
+4 + 4 => 8
+'4' - 4 => 0
+'4' + 4 = '44' 
+```
+
+**WTF??!!**
+
+Nos exemplos das duas primeiras linhas é muito simples. Operando com dois números apenas funciona como operadores matemáticos. Na terceira linha, como não existe operação de subtração entre *string*, o primeiro `'4'` é automaticamente convertido para um *number* `4`, logo, `4 - 4 = 0`. Mas na quarta linha temos uma adição de *string*, e adição é possível de fazer com texto, chamamos isso de **concatenação**. Nesse caso, como o primeiro operando é uma *string* e é possível fazer uma concatenação, é o segundo operando `4` que é automaticamente convertido para *string* `'4'`, ficando `'4' + '4' = '44'`. Se estamos concatenando textos, apenas colocamos os caracteres um após o outro, formando `'44'`. Da mesma forma... `'texto' + true` resulta em `'textotrue'`. Outras "bizarrices" também podem acontecer, por exemplo, qual é o resultado de `4 + true`? Como que somamos um número com um *booleano*? Se o primeiro operando é capaz de usar o operador, os demais operandos serão convertidos para o mesmo tipo do primeiro operando. Ou seja, `true` será convertido para *number*. E como convertemos um *boolean* pra *number*? Simples, como em binário: `false = 0` e `true = 1`. Assim temos que:
+
+```javascript
+4 + true = 5
+6 * false = 0
+```
+
+## Variáveis
+
+Vimos em um exemplo anterior o uso de `let`. Mas afinal o que é isso? Essa é a forma com que declaramos (ou criamos) variáveis em javascript. Na verdade existem 3 formas de criar uma variável em javascript:
+
+### let
+O [let](https://www.w3schools.com/js/js_let.asp) permmite que eu crie uma variável que pode mudar de valor ao longo do tempo. Permite que eu faça atribuições a ela em qualquer parte do código.
+```javascript
+let valor // valor é undefined
+valor = null // valor é null
+valor = 0 // valor é zero
+valor = 1 // valor é um
+```
+
+### const
+É igualzinho ao `let`, exceto quando é diferente. Eu uso exatamente da mesma forma para criar variáveis, mas uma vez que eu define um valor para essa "variável", ela não pode mais mudar, ou seja, ela é [constante](https://www.w3schools.com/js/js_const.asp) e não "variável".
+```javascript
+const valor = 1 // valor é um
+valor = 2 // ocorre um erro no javascript pois não posso alterar o valor de uma constante
+```
+
+### var (deprecated)
+É a forma antiga de criar variáveis. Só existe ainda por questões de retrocompatibilidade. O uso de `var` pode nos causar diversos problemas que só vamos entender quando falarmos de escopo. Por ora, o `var` funciona exatamente como o `let`. Vamos ver diversos exemplos na internet utilizando `var`, mas sempre que formos criar coisas novas, usamos o `let`.
+
 # 07-10 - Aula 11 - E `se` eu precisar de um `laço`?
+
+## Operadores de Comparação
+
+Muitas vezes se faz necessário comparar dois ou mais valores para tomar uma decisão, por exemplo, dar um alerta para o usuário de o valor do carrinho de compras for superior ao saldo atua dele. Para isso precisamos comparar dois dados: o valor total do carrinho e o saldo atual da conta do usuário. O resultado de uma comparação entre dois valores sempre será um resultado booleando, ou seja, true ou false. Existem diversas [comparações](https://www.w3schools.com/js/js_comparisons.asp) que podemos fazer, entre elas:
+
+| Operador | Descrição | Exemplo | Resultado
+|---|---|---|---|
+| == | igual a | 5 == '5' | true |
+| === | valor e tipo são iguas | 5 === '5' | false |
+| != | diferente | 5 != '5' | false |
+| !== | valor ou tipo diferentes | 5 !== '5' | true
+| > | maior que | 5 > 5 | false
+| < | less than | 5 < 5 | false
+| >= | maior ou igual | 5 >= 5 | true 
+| <= | menor ou igual | 5 <= 5 | true
+
+```javascript
+condicaoAlerta = valorCarrinho > saldoConta 
+```
+
+## Operadores lógicos
+
+Apenas uma comparação de valores às vezes não nos traz o resultado que esperamos, pois as vezes uma regra é mais complexa que apenas uma comparação e passa por uma sequência de comparações. No nosso exemplo do carrinho de compras, podemos adicionar mais uma regra para dar o alerta ao usuário: só vamos alertar o usuário se o valor do carrinho for superior ao saldo e se, também, a data da compra for igual a data de hoje. Como podemos, então, agrupar essas regras para ter um resultado único booleano informando se exibimos o alerta ou não? Operadores lógicos. Esses operadores são baseados na [álgebra booleana](https://brasilescola.uol.com.br/informatica/algebra-booleana.htm#:~:text=Para%20descrever%20os%20circuitos%20que,Boole%20(1815%20%2D%201864).). Vamos simplificar usando apenas 3 operados (com apenas esses três podemos formar qualquer outro - e isso é incrível).
+
+| Operador | Descrição | Exemplo 1 | Resultado 1 | Exemplo 2 | Resultado 2 |
+|---|---|---|---|---|---|
+| && | Lógica AND (E) | true && true | true | true && false | false | 
+| || | Lógica OR (OU) | true || false | true | false || false | false |
+| ! | Lógica NOT (NÃO) | !true | false | !false | true |
+
+```javascript
+condicaoAlerta = valorCarrinho > saldoConta && dataCompra === hoje
+```
+
+> Com o AND, deixamos a regra mais específica, adicionando mais uma condição que PRECISA ser atingida para ser verdadeiro
+
+> Com o OR, deixamos a regra menos específica, adicionando uma outra opção para o atingimento da regra.
+
+## Codicionais
+
+Ok! E o que fazemos com esse resultado booleano obtido e como usamos isso pra realmente exibir ou não o alerta? Precisamos criar condicionais no nosso código que poderão alterar o fluxo de execução do mesmo. O código sempre executa linha a linha, mas pode encontrar desvios que chamamos de condicionais, para executar ou não um trecho do código. O principal deles e o mais utilizado é o [if e o else](https://www.w3schools.com/js/js_if_else.asp). Ele funciona criando um novo escopo ou fluxo de código recebendo por parâmetro uma condição booleana que identifica se aquele escopo deve ou não ser considerado naquele momento:
+
+```javascript
+condicaoAlerta = valorCarrinho > saldoConta && dataCompra === hoje
+
+if (condicaoAlerta) {
+  alert('Ops! Tu não tem saldo hoje para efetuar essa compra!')
+}
+```
+
+O `else` (senão), por sua vez, é opcional e cria um trecho de código que deverá ser executado se a condição não for atendida:
+
+```javascript
+condicaoAlerta = valorCarrinho > saldoConta && dataCompra === hoje
+
+if (condicaoAlerta) {
+  alert('Ops! Tu não tem saldo hoje para efetuar essa compra!')
+} else {
+  saldoConta -= valorCarrinho
+}
+```
+
+Outra opção de desvio de código é o [switch](https://www.w3schools.com/js/js_switch.asp). Ele funciona como uma agregação de vários if para uma mesma variável verificando qual é o valor dela (essa comparação é feita um única vez internamente utilizando o operador `====`). Utilizamos o comando `case` para identificar cada possível valor da variável e o comando `default` caso a variável não possua nenhum dos valores dos cases. Dentro de cada bloco de case ou default, podemos utilizar o comando `break`, para identificar que queremos encerrar o processamento dentro do switch e continuar a execução do código.
+
+```javascript
+const codigoPagamento = getFormaPagamentoClliente()
+
+switch(codigoPagamento) {
+  case 1:
+    alert('Pagamento com boleto!')
+    break
+  case 2:
+    alert('Pagamento com cartão de crédito!')
+    break
+  case 3:
+    alert('Pagamento com saldo da conta!')
+    break
+  default:
+    alert('Forma de pagamento desconhecida!')
+}
+```
+
+## Laços de Repetição
+
+Basicamente existe o [lop for](https://www.w3schools.com/js/js_loop_for.asp) e o [lopp while](https://www.w3schools.com/js/js_loop_while.asp). O *for* utilizamos quando queremos executar o mesmo trecho de código durante um número definido de vezes: nesse caso, é possível ter um controle de quantas vezes o código será executado. No caso do *while*, o trecho de código especificado será executado um número indefinido de vezes enquanto uma condição informada seja verdadeira.
+
+Anatomia do loop for: `for (inicialização; condição de fim; executar a cada iteraçãa)`. Exemplo:
+
+```javascript
+let texto = ''
+for (let i = 0; i < 10 ; i++) {
+  texto += i
+}
+// texto aqui vale '0123456789'
+// i é inicializado com 0
+// a cada iteração i é incrementado em 1
+// o for é executado enquanto i for menor do que 10
+// logo, o último valor de i é 9, pois quando chega a 10, o trecho não será executado
+```
+
+O while é bem simples e pode ser representado da seguinte forma:
+
+```javascript
+let texto = ''
+let i = 0
+let respostaUsuario = null
+while (respostaUsuario != null) {
+  texto += i++ 
+  respostaUsuario = lerRespostaUsuario()
+}
+```
+
 # 08-10 - Aula 12 - Minha função é cuidar do escopo
+
+Tudo em javascript ocorre dentro de funções então é importante darmos uma atenção especial a elas. Podemos criar várias funcões em várias partes do código com muitos condicionais e laços de repetição. Mas é importante salientar como isso acontece e como acontece a formação de [escopo](https://www.w3schools.com/js/js_scope.asp), haja visto que uma função pode ter outra função internamente com outros trechos de código. Basicamente, podemos resumir que toda vez que criamos um bloco com chaves (`{}`) estamos criando um novo escopo. E o que isso significa? Significa que tudo o que for criado ali dentro só existirá e poderá ser acessado ali dentro. Dessa forma, uma variável criada dentro de um bloco de if só poderá ser usada dentro daquele bloco. Quando a execução do programa encontra o caractere de final de bloco (`}`), o programa será responsável por remover os apontamentos para aqueles endereços de memórias que criamos, deixando aquele trecho de memória livre para outro dado ser armazenado, logo, aquela variável não existe mais.
+
+```javascript
+let valor = 1
+let texto = ''
+
+alert(valor)
+
+if (valor === 1) {
+  let valor = 2
+  alert(valor)
+
+  if (valor === 2) {
+    texto = 'novo texto'
+  }
+}
+
+alert(texto)
+alert(valor)
+```
+
+Isso acontece o mesmo quando criamos funções. As variáveis que criamos dentro de uma função podems ser criadas com os mesmos nomes de variáveis de outra função, pois estão em escopos diferentes.
+
+```javascript
+function a() {
+  let valor = 1
+  alert(valor)
+}
+
+function b() {
+  let valor = 2
+  alert(valor)
+}
+
+a()
+b()
+alert(valor)
+```
+
+Lembra que falamos do `var` anteriormente e dos problemas que ele poderia nos causar quando falamos de escopo? Então, basicamente o que é declarado com `var` possui escopo global, ou seja, pode ser alterado dentro de outro escopo. Assim é como o javascript funcionava anteriormente, mas causa diversos problemas quando utilizávamos um mesmo nome de variável em escopos diferentes. Isso foi resolvido substituindo-a pelo `let`, que faz o controle de escopo local como nos exemplos anteriores. Portanto não utilize `var`.
+
+## Arrow Function
+
+Outra forma de abreviar a declaração de uma função é utilizando a notação de [arrow function](https://www.w3schools.com/js/js_arrow_function.asp). Existem algumas pequenas diferenças sobre a declaração nominal de funções e as arrow function, mas veremos isso em capítulos adiante. Por ora, vejamos elas como um atalho para descrever uma função utilizando a sintaxe `nomeDaFuncao = (parametros) => retorno`. O retorno da função pode estar entre chaves se possuir mais de uma linha e os parâmetros podem estar separados, por vírgula. Se nenhum parâmetro for necessário, pode-se usar apenas os parênteses vazio (`()`). Se houver apenas um parâmetro, pode-se usar o nome do parâmetro sem os parênteses:
+
+```javascript
+soma = (operandoA, operandoB) => operandoA + operandoB
+exibir = texto => alert(texto)
+obterValor = () => prompt('Digite um número')
+
+somarExibindo = () => {
+  operandoA = obterValor()
+  operandoB = obterValor()
+  resultado = soma(operandoA, operandoB)
+  exibir(resultado)
+}
+```
+
 
 ## Projeto #03
 
-**Escopo 1**: Criar um novo projeto no Github (`recomendacao-jogos`) para recomendação de jogos baseado em regras pré-definidas e interesses dos usuários. Criar um novo projeto no Github para calcular o valor patrimonial de um investidor considerando o aporte inicial e uma taxa de rentabilidade anual (dois argumentos) considerando o reinvestimento dos rendimentos.
+**Escopo 1**: Criar um novo projeto no Github (`recomendacao-jogos`) para recomendação de jogos baseado em regras pré-definidas e interesses dos usuários. O interesse do usuário é representado por um objeto contendo as propriedades:
+```
+console => valore possíveis: 'xbox', 'play', 'pc'
+estilo => valores possíveis: 'plataforma', 'estratégia', 'corrida', 'fps'
+ambiente => valores possíveis: 'sci-fi', 'medieval', 'realista' 
+intensidade => valores possíveis: 'casual', 'normal', 'hardcore'
+```
+
+Regras:
+- Quando o interesse for 'xbox' e estilo 'corrida', o retorno deve ser 'Forza Motorsport'
+- Quando o interesse for 'pc' e 'estratégia', o retorno deve ser 'Age of Empires
+- Quando o interesse for 'play', 'estratégia' e 'hardcore', o retorno deve ser 'Final Fantasy Tactics'
+- Quando o interesse for 'corrida' e 'sci-fi', o retorno deve ser 'F-Zero'
+- Quando o interesse for 'pc' e 'hardcore', o retorno deve ser 'Dark Souls'
+- Quando o interesse for 'pc' e 'casual', o retorno deve ser 'Angry Birds'
+- Quando o interesse for 'play' e 'plataforma', o retorno deve ser 'Crash Bandicoot'
+- Quando o interesse for 'corrida' e 'casual', o retorno deve ser 'Mario Kart'
+- Quando o interesse for 'fps' e 'pc', o retorno deve ser 'Counter Strike'
+- Quando o interesse for 'xbox' e 'sci-fi', o retorno deve ser 'Halo'
+
 
 **Escopo 2**: Criar um novo projeto no Github (`juros-compostos`) para calcular o montante acumulado de um investimento financeiro. A função deverá receber por argumentos, qual o valor do capital investido, a taxa de juros aplicada e o período da aplicação. [Juros Compostos](https://mepoupenaweb.uol.com.br/dicas-de-riqueza/o-que-sao-juros-compostos-e-como-usa-los-para-enriquecer/)
 
