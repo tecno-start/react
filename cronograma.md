@@ -722,7 +722,12 @@ Modifica a ordem dos flex itens. Sempre do menor para o maior, assim order: 1, a
 
 # 05-10 - Aula 09 - Respira e vamo de novo
 
-Aula de revisão, dúvidas e reforço
+- `git clone` - baixa o código do servidor e cria um link entre a máquina (local) e o servidor (remoto). Uso quando quero baixar pra minha máquina, um projeto que eu nunca baixei antes.
+- `git pull` - baixa o código do servidor para um repositório existente na minha máquina. É preciso ter feito clone uma vez. Atualizar a versão local.
+- `git push` - envia as atualizações locais para o servidor remoto. Salvar na nuvem. Publicar as alterações.
+- `git status` - verifica se tem alterações locais. **Não** verifica se tem alterações no servidor. Mostra quais alterações e que estágios elas estão.
+- `git add .` - reservar as alterações para adicionar em um commit (é um conjunto de alterações).
+- `git commit -m "Alteração"` - crio uma nova versão do código com todas as alterações adicionadas com o comando `add`. É necessário dar um nome pra essa alteração, por isso passamos o parâmetro `-m`
 
 # 06-10 - Aula 10 - Luz, camera, ação
 
