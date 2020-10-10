@@ -142,5 +142,24 @@ if (pc === null) {
   compra = pc.nome
 }
 
-console.log(compra)
+// console.log(compra)
 
+// arrow function
+
+// const mruv = (vo, a, t) => vo + (a**2) * t
+// const alerta = texto => console.log(texto)
+// const obtemNomeUsuario = () => prompt('Teu nome')
+// const mediaAritmetica = numeros => {
+//   let total = 0
+//   for (let i = 0; i < numeros.length; i++) {
+//     total += numeros[i]
+//   }
+//   return total / numeros.length
+// }
+
+
+const array = [1,2,3,4,5,6,7,8,9]
+const pares = array.filter(n => n % 2 === 0)
+const impares = array.filter(n => n % 2 !== 0)
+console.log(pares)
+console.log(impares)
