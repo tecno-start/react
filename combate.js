@@ -49,6 +49,17 @@ personagem = {
   debuffs: []
 }
 
+---------------
+
+ S I M U L A D O R    D E    C O M B A T E    --   F A S E  III
+
+> Printar no console cada vez que um ataque for desferido com sucesso
+> Printar no console cada vez que um ataque for ignorado
+> Printar no console cada vez que um buff for aplicado
+> Printar no console cada vez que um debuff for aplicado
+> Regra única: não é possível utilizar console.log dentro da função de cálculo
+> Regra adicional:  Printar primeiro todos os ataques com sucesso, depois ignorados, depois buffs e debuffs
+
 */
 
 function combateAtaque(atacante, defensor) {
