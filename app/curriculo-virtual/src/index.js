@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
+import Conteudo from './Conteudo.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Conteudo />
   </React.StrictMode>,
   document.getElementById('root')
 );
