@@ -1,12 +1,12 @@
 import React from 'react';
-import Conteudo from './Conteudo.jsx';
+import Curriculo from './curriculo/Curriculo.jsx';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
 
-      <Conteudo />
+      <Curriculo />
 
     </div>
   );
