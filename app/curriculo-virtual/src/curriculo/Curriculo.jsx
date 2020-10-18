@@ -10,6 +10,8 @@ import Experience from './components/experience/Experience'
 import SocialMedia from './components/social-media/SocialMedia'
 import Footer from './components/footer/Footer'
 
+import './Curriculo.css'
+
 function Curriculo() {
 
   const [curriculo, setCurriculo] = useState({
